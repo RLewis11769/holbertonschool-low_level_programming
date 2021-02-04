@@ -1,4 +1,4 @@
-#include std.io
+#include <stdio.h>
 /**
  * main - Prints string
  * Return: The string in quotes followed by a newline
