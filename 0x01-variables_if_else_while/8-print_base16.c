@@ -1,18 +1,18 @@
 #include <stdio.h>
 
 /**
- * main - 
- * Return: 
+ * main - Prints base16 numbers
+ * Return: Returns 0-9 then a-f
  */
 
 int main(void)
 {
-  int i;
-  char c;
-  for(i = 0; i < 10; i++)
-    putchar(i + '0');
-  for(c = 'a'; c < 'g'; c++)
-    putchar(c);
-  putchar('\n');
- return 0;
+int i;
+char c;
+for (i = 0; i < 10; i++)
+putchar(i + '0');
+for (c = 'a'; c < 'g'; c++)
+putchar(c);
+putchar('\n');
+return (0);
 }
