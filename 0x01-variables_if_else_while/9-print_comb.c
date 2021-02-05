@@ -5,7 +5,8 @@
  * Return: Returns 0 if successful
  */
 
-int main(void){
+int main(void)
+{
 int num;
 
 for (num = 0; num < 10; num++)
