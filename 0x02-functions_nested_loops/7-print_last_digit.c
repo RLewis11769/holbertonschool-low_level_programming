@@ -3,18 +3,18 @@
 /**
  * print_last_digit - prints last digit of any number
  * Return: value of last digit
- * @r: First operand
+ * @x: First operand
  */
 
-int print_last_digit(int r)
+int print_last_digit(int x)
 {
-	int x = (r % 10);
+	int y;
 
-	if (r >= 0)
+	y = x % 10;
+	if (y < 0)
 	{
-		return (x);
+		y = y * -1;
 	}
-	else
-		return (x * -1);
-	return (0);
+	_putchar('0' + y);
+	return (y);
 }
