@@ -1,3 +1,5 @@
+#include "holberton.h"
+
 /**
  * print_diagonal - draws diagonal line in terminal
  * @n: number of times \ is printed
@@ -7,5 +9,22 @@
 
 void print_diagonal(int n)
 {
+	int d, a;
 
+	if (n > 0)
+	{
+		for (d = 0; d < n; d++)
+		{
+			for (a = 0; a < n; a++)
+			{
+				if (a == d)
+					_putchar('\\');
+				else
+					_putchar(' ');
+			}
+			_putchar('\n');
+		}
+	}
+	else
+		_putchar('\n');
 }
