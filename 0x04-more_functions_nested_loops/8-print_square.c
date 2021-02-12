@@ -1,11 +1,18 @@
+#include "holberton.h"
+
 /**
- * print_square - prints solid square of #
- * @size: integers in size of square
- *
- * Return: 0 if successful
+ * print_square - draws diagonal line in terminal
+ * @size: number of times \ is printed
  */
 
 void print_square(int size)
 {
+	int d, a;
 
+	for (d = 0; d < size; d++)
+	{
+		for (a = 0; a < size; a++)
+			_putchar('#');
+		_putchar('\n');
+	}
 }
