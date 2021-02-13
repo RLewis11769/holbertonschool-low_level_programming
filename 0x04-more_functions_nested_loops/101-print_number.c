@@ -1,20 +1,11 @@
-/**
- * main - calls print_number function
- * Return: 0 if successful
- */
-
-int main(void)
-{
-	print_number();
-	return (0);
-}
+#include "holberton.h"
 
 /**
  * print_number - prints any integer
  * @n: integer to be printed
  */
 
-void prime_factor(int n)
+void print_number(int n)
 {
 
 }
