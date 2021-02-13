@@ -2,10 +2,8 @@
 #include "holberton.h"
 
 /**
- * _isupper - checks for uppercase letters
- * @c: integer to check
- *
- * Return: 1 is uppercase, 0 otherwise
+ * main - calls fizz_buzz function
+ * Return: 0 if successful
  */
 
 int main(void)
@@ -14,13 +12,17 @@ int main(void)
 	return (0);
 }
 
+/**
+ * fizz_buzz - prints 1-100 but with Fizz/Buzz/FizzBuzz in place of multiples
+ */
+
 void fizz_buzz(void)
 {
 	int n;
 	char *F = "Fizz";
 	char *B = "Buzz";
 
-	for (n = 1; n <= 100; n++)
+	for (n = 1; n < 100; n++)
 	{
 		if ((n % 3 == 0) && (n % 5 == 0))
 			printf("%s%s ", F, B);
@@ -31,5 +33,5 @@ void fizz_buzz(void)
 		else
 			printf("%d ", n);
 	}
-	putchar('\n');
+	printf("%s\n", B);
 }
