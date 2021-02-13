@@ -3,7 +3,6 @@
 /**
  * print_diagonal - draws diagonal line in terminal
  * @n: number of times \ is printed
- *
  * Return: 0 if successful
  */
 
@@ -19,8 +18,12 @@ void print_diagonal(int n)
 			{
 				if (a == d)
 					_putchar('\\');
-				else
+				else if (a < d)
 					_putchar(' ');
+				else if (a > d + 1)
+					_putchar('\n');
+				else
+					break;
 			}
 			_putchar('\n');
 		}
