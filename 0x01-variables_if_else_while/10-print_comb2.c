@@ -7,15 +7,19 @@
 
 int main(void)
 {
-float f;
-f = 00;
-while (f < 100)
-{
-f++;
-putchar(f + '0');
-putchar(',');
-putchar(' ');
-}
-putchar('\n');
-return (0);
+	int d;
+
+	for (d = 00; d < 100; d++)
+	{
+		putchar(d / 10 + '0');
+		putchar(d % 10 + '0');
+		if (d < 99)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+		else
+			putchar('\n');
+	}
+	return (0);
 }
