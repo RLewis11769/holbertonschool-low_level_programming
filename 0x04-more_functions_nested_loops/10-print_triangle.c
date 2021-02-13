@@ -9,15 +9,17 @@
 
 void print_triangle(int size)
 {
-	int d, a;
+	int d, a, bl;
 
-	for (d = 1; d >= size; d++)
-	{
-		for (a = 1; a >= d; a++)
+	if (size > 0)
+		for (d = 0; d < size; d++)
 		{
-			_putchar(' ');
+			for (bl = 0; bl < size - d; bl++)
+				_putchar(' ');
+			for (a = 0; a <= d; a++)
+				_putchar('#');
 			_putchar('\n');
 		}
-		_putchar('#');
-	}
+	else
+		_putchar('\n');
 }
