@@ -7,7 +7,16 @@
  * Return: pointer to dest
  */
 
-void *_strcpy(char *dest, char *src)
+char *_strcpy(char *dest, char *src)
 {
+	int length = 0;
 
+	while (src[length] != '\0')
+	{
+		dest[length] = src[length];
+		length++;
+	}
+
+	dest[length] = '\0';
+	return (dest);
 }
