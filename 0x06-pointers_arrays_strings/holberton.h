@@ -1,5 +1,5 @@
-#IFNDEF HOLBERTON_H
-#DEFINE HOLBERTON_H
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
 
 int _putchar(char c);
 
@@ -13,4 +13,4 @@ char *cap_string(char *);
 char *leet(char *);
 char *rot13(char *);
 
-#ENDIF
+#endif
