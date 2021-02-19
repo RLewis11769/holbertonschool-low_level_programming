@@ -17,11 +17,5 @@ void reverse_array(int *a, int n)
 		x = a[start];
 		a[start] = a[end];
 		a[end] = x;
-
-/*		if (x != start)
-		{
-			_putchar(',');
-			_putchar(' ');
-			}*/
 	}
 }
