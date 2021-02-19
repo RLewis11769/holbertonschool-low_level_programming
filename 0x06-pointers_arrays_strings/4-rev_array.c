@@ -18,10 +18,10 @@ void reverse_array(int *a, int n)
 		a[start] = a[end];
 		a[end] = x;
 
-		if (x != start)
+/*		if (x != start)
 		{
 			_putchar(',');
 			_putchar(' ');
-		}
+			}*/
 	}
 }
