@@ -1,12 +1,21 @@
 #include "holberton.h"
 
 /**
- * *_string_toupper - changes lowercase letters to uppercase
- * @x: pointer to characters to be chaged
+ * *string_toupper - changes lowercase letters to uppercase
+ * @str: pointer to characters to be chaged
  * Return: pointer to string
  */
 
-char *_string_toupper(char *x)
+char *string_toupper(char *str)
 {
+	int n = 0;
 
+	while (str[n] != '\0')
+	{
+		if (str[n] >= 'a' && str[n] <= 'z')
+			str[n] = str[n] - 32;
+		n++;
+	}
+
+	return (str);
 }
