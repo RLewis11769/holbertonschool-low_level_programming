@@ -2,7 +2,7 @@
 
 /**
  * *cap_string - capitalizes words in string
- * @x: pointer to characters to be capitalized
+ * @str: pointer to characters to be capitalized
  * Return: characters to be capitalized
  */
 
@@ -16,7 +16,7 @@ char *cap_string(char *str)
 	{
 		if ((*str >= 'a') && (*str <= 'z'))
 			str[a] = str[a] - 32;
-		for(c = 0; c < 13; c++)
+		for (c = 0; c < 13; c++)
 		{
 			if (str[a] == arr[c])
 			{
