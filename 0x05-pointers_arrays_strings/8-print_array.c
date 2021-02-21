@@ -15,7 +15,7 @@ void print_array(int *a, int n)
 		return;
 
 	if (n == 0)
-		printf("%d\n", a[0]);
+		printf("%d", a[0]);
 
 	for (x = 0; x < n; x++)
 	{
