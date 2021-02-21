@@ -18,9 +18,11 @@ char *rot13(char *str)
 		x = 0;
 		while (rot1[x] != '\0')
 		{
-			if (str[i] == rot1[x]){
+			if (str[i] == rot1[x])
+			{
 				str[i] = rot2[x];
-				break;}
+				break;
+			}
 			x++;
 		}
 		i++;
