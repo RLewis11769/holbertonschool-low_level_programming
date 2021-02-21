@@ -19,7 +19,5 @@ void rev_string(char *s)
 		c = s[x];
 		s[x] = s[length - 1 - x];
 		s[length - 1 - x] = c;
-
-	_putchar(s[length]);
 	}
 }
