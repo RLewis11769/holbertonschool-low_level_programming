@@ -29,7 +29,7 @@ unsigned int _strspn(char *s, char *accept)
 				count++;
 				continue;
 			}
-			else if (s[x] == accept[alen])
+			else if (accept[y] == accept[alen])
 				break;
 			else
 				continue;
