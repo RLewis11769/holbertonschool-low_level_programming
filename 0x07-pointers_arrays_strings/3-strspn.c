@@ -9,5 +9,29 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
+	int x, y;
+	int slength = 0;
+	int alen = 0;
+	int count = 0;
 
+	while (s[slength] != '\0')
+		slength++;
+
+	while (accept[alen] != '\0')
+		alen++;
+
+	for (x = 0; x <= alen; x++)
+	{
+		for (y = 0; y <= slength; y++)
+		{
+			if (s[x] == accept[y])
+			{
+				count++;
+				continue;
+			}
+			else if ((s[x] != accept[y]) && (s[x] == accept[alen]))
+				break;
+		}
+	}
+	return (count);
 }
