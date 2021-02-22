@@ -9,5 +9,25 @@
 
 char *_strchr(char *s, char c)
 {
+	int x;
+	int length = 0;
 
+	while (s[length] != '\0')
+		length++;
+
+	for (x = 0; x <= length; x++)
+	{
+		if (s[x] == c)
+		{
+			s = &s[x];
+			return (s);
+		}
+		else if (s[x] == length)
+		{
+			break;
+		}
+		else
+			continue;
+	}
+	return (0);
 }
