@@ -14,7 +14,7 @@ unsigned int _strspn(char *s, char *accept)
 	int alen = 0;
 	int count = 0;
 
-	while (s[slength] != ',')
+	while (s[slength] !='\0')
 		slength++;
 
 	while (accept[alen] != '\0')
@@ -29,10 +29,8 @@ unsigned int _strspn(char *s, char *accept)
 				count++;
 				continue;
 			}
-			else if (s[x] == s[slength])
+			else if ((s[x] != accept[y]) && (s[x] == accept[alen]))
 				break;
-			else
-				continue;
 		}
 	}
 	return (count);
