@@ -14,7 +14,7 @@ unsigned int _strspn(char *s, char *accept)
 	int alen = 0;
 	int count = 0;
 
-	while (s[slength] !='\0')
+	while (s[slength] != '\0')
 		slength++;
 
 	while (accept[alen] != '\0')
