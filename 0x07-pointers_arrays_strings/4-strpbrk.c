@@ -9,30 +9,20 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	int x, y;
-	int length = 0;
+	int y;
 	int alen = 0;
-
-	while (s[length] != '\0')
-		length++;
 
 	while (accept[alen] != '\0')
 		alen++;
 
-	for (x = 0; x <= length; x++)
+	for (;; s++)
 	{
 		for (y = 0; y <= alen; y++)
 		{
-			if (s[x] == accept[y])
-			{
-				s = &s[x];
+			if (*s == accept[y])
 				return (s);
-			}
-			else if (s[x] == length)
-				break;
-			else
-				continue;
+			if (*s == '\0')
+				return (0);
 		}
 	}
-	return (s);
 }
