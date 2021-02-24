@@ -10,28 +10,20 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	int x, y;
-	int slength = 0;
-	int alen = 0;
 	int count = 0;
 
-	while (s[slength] != '\0')
-		slength++;
-
-	while (accept[alen] != '\0')
-		alen++;
-
-	for (x = 0; x <= alen; x++)
+	for (y = 0; s[y] != '\0'; y++)
 	{
-		for (y = 0; y <= slength; y++)
+		for (x = 0; accept[x] != '\0'; x++)
 		{
-			if (s[x] == accept[y])
+			if (s[y] == accept[x])
 			{
 				count++;
-				continue;
-			}
-			else if ((s[x] != accept[y]) && (s[x] == accept[alen]))
 				break;
+			}
 		}
+		if (accept[x] == '\0')
+			break;
 	}
 	return (count);
 }
