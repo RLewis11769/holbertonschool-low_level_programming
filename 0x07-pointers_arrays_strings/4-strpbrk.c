@@ -10,14 +10,10 @@
 char *_strpbrk(char *s, char *accept)
 {
 	int y;
-	int alen = 0;
-
-	while (accept[alen] != '\0')
-		alen++;
 
 	for (;; s++)
 	{
-		for (y = 0; y < alen; y++)
+		for (y = 0; accept[y] != '\0'; y++)
 		{
 			if (*s == accept[y])
 				return (s);
