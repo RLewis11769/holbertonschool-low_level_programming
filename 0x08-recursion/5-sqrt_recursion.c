@@ -34,8 +34,5 @@ int sqr(int n, int min, int max)
 
 int _sqrt_recursion(int n)
 {
-/*	if (n == 0)
-		return (0);
-		else*/
-		return (sqr(n, 1, n));
+	return (sqr(n, 1, n));
 }
