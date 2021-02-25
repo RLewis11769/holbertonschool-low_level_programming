@@ -3,27 +3,19 @@
 /**
  *sqr - calculates square root of n
  * @n: number to find square root of
- * @min: minimum number square root can be (starts at 1)
- * @max: maximum number square root can be (starts at n)
+ * @check: number to test if it's square root
  * Return: square root of n
  */
 
-int sqr(int n, int min, int max)
+int sqr(int n, int check)
 {
-	int guess, guess2;
+	int sq = check * check;
 
-	if (min > max)
+	if (sq == n)
+		return (check);
+	if (sq > n)
 		return (-1);
-
-	guess = ((min + max) / 2);
-	guess2 = guess * guess;
-
-	if (guess2 == n)
-		return (guess);
-	if (guess2 < n)
-		return (sqr(n, guess + 1, max));
-	else
-		return (sqr(n, min, guess - 1));
+	return (sqr(n, check + 1));
 }
 
 /**
@@ -34,5 +26,8 @@ int sqr(int n, int min, int max)
 
 int _sqrt_recursion(int n)
 {
-	return (sqr(n, 1, n));
+	if (n < 0)
+		return (-1);
+	else
+		return (sqr(n, 0));
 }
