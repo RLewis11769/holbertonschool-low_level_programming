@@ -26,5 +26,5 @@ int pal(char *s, char first, char last)
 
 int is_palindrome(char *s)
 {
-	return (pal(s, 0, length(s)));
+	return (pal(s, 0, length(s - 1)));
 }
