@@ -20,7 +20,7 @@ int sqr(int n, int min, int max)
 
 	if (guess2 == n)
 		return (guess);
-	else if (guess2 < n)
+	if (guess2 < n)
 		return (sqr(n, guess + 1, max));
 	else
 		return (sqr(n, min, guess - 1));
