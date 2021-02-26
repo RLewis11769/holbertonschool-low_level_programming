@@ -1,0 +1,1 @@
+# Now we are working with static libraries
