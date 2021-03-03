@@ -22,10 +22,11 @@ char *_strdup(char *str)
 		return (NULL);
 	if (p == 0)
 	{
-		free (p);
 		return (NULL);
 	}
 	for (x = 0; str[x] != '\0'; x++)
 		p[x] = str[x];
+	p[x] = '\0';
+
 	return (p);
 }
