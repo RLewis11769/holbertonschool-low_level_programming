@@ -9,11 +9,12 @@
 
 int length(char *s)
 {
-	int i;
+	int length;
 
-	for (i = 0; s[i] != '\0'; i++);
+	while (s[length] != '\0')
+		length++;
 
-	return (i);
+	return (length);
 }
 
 /**
@@ -24,18 +25,18 @@ int length(char *s)
 
 char *_strdup(char *str)
 {
-	unsigned int x;
+	int x;
 	char *p;
+
+	if (str == NULL)
+		return (NULL);
 
 	p = (char *)malloc(length(str) * sizeof(char) + 1);
 
-	if (str == 0)
+	if (p == NULL)
 		return (NULL);
-	if (p == 0)
-	{
-		return (NULL);
-	}
-	for (x = 0; str[x] != '\0'; x++)
+
+	for (x = 0; x < length(str); x++)
 		p[x] = str[x];
 	p[x] = '\0';
 
