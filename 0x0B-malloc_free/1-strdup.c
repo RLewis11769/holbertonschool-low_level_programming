@@ -9,7 +9,7 @@
 
 int length(char *s)
 {
-	int length;
+	int length = 0;
 
 	while (s[length] != '\0')
 		length++;
@@ -33,7 +33,7 @@ char *_strdup(char *str)
 
 	p = (char *)malloc(length(str) * sizeof(char) + 1);
 
-	if (p == NULL)
+	if (p == 0)
 		return (NULL);
 
 	for (x = 0; x < length(str); x++)
