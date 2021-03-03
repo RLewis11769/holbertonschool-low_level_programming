@@ -9,6 +9,6 @@
 
 void free_grid(int **grid, int height)
 {
-	while (*grid[height])
+	(void)height;
 	free(grid);
 }
