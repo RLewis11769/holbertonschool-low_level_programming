@@ -9,9 +9,12 @@
 
 int length(char *s)
 {
-	if (*s == '\0')
-		return (0);
-	return (1 + length(s + 1));
+	int len = 0;
+
+	while (s[len] != '\0')
+		len++;
+
+	return (len);
 }
 
 /**
@@ -23,19 +26,33 @@ int length(char *s)
 
 char *argstostr(int ac, char **av)
 {
-	int i, x;
+	int x, y;
+	int s = 0;
+	int l = 0;
 	char *p;
 
-	for (i = 0; i < ac; i++)
-		av[i] = av[ac - 1];
-
-	p = (char *)malloc(sizeof(char) * length(av[i]) + ac);
-
-	if (p == 0)
+	if (ac == 0)
+		return (NULL);
+	if (av == NULL)
 		return (NULL);
 
-	for (x = 0; p[x] != '\0'; x++)
-		p[x] = *av[x];
+	for (x = 0; x < ac; x++)
+		l += length(av[x]);
+
+	p = (char *)malloc(sizeof(char) * l + 1);
+	if (p == NULL)
+		return (NULL);
+
+	for (x = 0; x < ac; x++)
+	{
+		for (y = 0; av[x][y] != '\0'; y++)
+		{
+			p[s] = av[x][y];
+			s++;
+		}
+		p[s++] = '\n';
+	}
+	p[s] = '\0';
 
 	return (p);
 }
