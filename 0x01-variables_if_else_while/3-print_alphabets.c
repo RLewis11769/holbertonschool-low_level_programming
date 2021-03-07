@@ -2,16 +2,18 @@
 
 /**
  * main - Prints alphabet in lowercase then uppercase
- * Return: Returns 1 string
+ * Return: 0 if successful
  */
 
 int main(void)
 {
-int let;
-for (let = 'a'; let <= 'z'; let++)
-putchar(let);
-for (let = 'A'; let <= 'Z'; let++)
-putchar(let);
-putchar('\n');
-return (0);
+	int alph;
+
+	for (alph = 'a'; alph <= 'z'; alph++)
+		putchar(alph);
+	for (alph = 'A'; alph <= 'Z'; alph++)
+		putchar(alph);
+	putchar('\n');
+
+	return (0);
 }

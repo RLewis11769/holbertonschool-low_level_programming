@@ -2,15 +2,16 @@
 
 /**
  * main - Print alphabet in lowercase
- * Return: String of letters
+ * Return: 0 if successful
  */
 
 int main(void)
 {
-int letter;
-for (letter = 'a'; letter <= 'z'; letter++)
-putchar(letter);
-putchar('\n');
+	int letter;
 
-return (0);
+	for (letter = 'a'; letter <= 'z'; letter++)
+		putchar(letter);
+	putchar('\n');
+
+	return (0);
 }

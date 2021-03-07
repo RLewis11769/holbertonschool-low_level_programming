@@ -2,14 +2,15 @@
 
 /**
  * main - Prints alphabet backwards
- * Return: Returns alphabet string
+ * Return: 0 if successful
  */
 
 int main(void)
 {
-int let;
-for (let = 'z'; let >= 'a'; let--)
-putchar(let);
-putchar('\n');
-return (0);
+	int alph;
+
+	for (alph = 'z'; alph >= 'a'; alph--)
+		putchar(alph);
+	putchar('\n');
+	return (0);
 }
