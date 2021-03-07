@@ -2,7 +2,7 @@
 #include <stdio.h>
 /**
  * print_to_98 - prints to 98 from whatever random int
- * @x: integer
+ * @n: integer to count from
  */
 void print_to_98(int n)
 {

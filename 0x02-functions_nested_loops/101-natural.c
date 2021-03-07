@@ -1,20 +1,31 @@
 #include <stdio.h>
 
 /**
- * main - Prints sum of multiples of 3 or 5 under 1024
+ * natural - Sums all multiples of 3 or 5 under 1024
+ * @x: 1024 in this case but should work with any number
+ */
+
+void natural(int x)
+{
+	int i;
+	int sum = 0;
+
+	for (i = 0; i < x; i++)
+	{
+		if (i % 3 == 0 || i % 5 == 0)
+			sum += i;
+	}
+	printf("%d\n", sum);
+}
+
+/**
+ * main - Calls natural()
  * Return: 0 if successful
  */
 
 int main(void)
 {
-	int x = 1;
-	int sum = 0;
+	natural(1024);
 
-	for (; x < 1024; x++)
-	{
-		if ((x % 3 == 0) || (x % 5 == 0))
-			sum = sum + x;
-	}
-	printf("%d\n", sum);
 	return (0);
 }
