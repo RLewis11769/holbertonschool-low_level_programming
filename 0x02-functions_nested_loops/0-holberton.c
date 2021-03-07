@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * main - Writes "Holberton" to stdout
+ * main - Prints "Holberton"
  * Return: 0 if successful
  */
 
@@ -12,5 +12,6 @@ int main(void)
 
 	for (i = 0; i < 10; i++)
 		_putchar(holberton[i]);
+
 	return (0);
 }

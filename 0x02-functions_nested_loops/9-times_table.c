@@ -1,35 +1,33 @@
 #include "holberton.h"
 /**
- * times_table - writes the character c to stdout
+ * times_table - prints multiplication table for 9
  */
 void times_table(void)
 {
-	int a, b, x, y;
-	int z = 0;
+	int row, col;
+	int result;
 
-	for (x = 0; x < 10; x++)
+	for (col = 0; col < 10; col++)
 	{
-		for (y = 0; y < 10; y++)
+		for (row = 0; row < 10; row++)
 		{
-			a = z / 10;
-			b = z % 10;
-			if (z > 9)
-			{
-				_putchar(a + '0');
-			}
-			if ((z < 10) && (y > 0))
-			{
+			result = row * col;
+			if (row != 0 && result < 10)
 				_putchar(' ');
+			if (result < 10)
+				_putchar(result + '0');
+			if (result >= 10)
+			{
+				_putchar(result / 10 + '0');
+				_putchar(result % 10 + '0');
 			}
-			_putchar(b + '0');
-			if (y < 9)
+			if (row < 9)
 			{
 				_putchar(',');
 				_putchar(' ');
 			}
-			z = z + x;
+
 		}
 		_putchar('\n');
-		z = 0;
 	}
 }
