@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * print_square - draws diagonal line in terminal
- * @size: number of times # is printed
+ * print_square - prints square of #
+ * @size: length of each side of square
  */
 
 void print_square(int size)
