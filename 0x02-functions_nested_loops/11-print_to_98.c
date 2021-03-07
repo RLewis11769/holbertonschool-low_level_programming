@@ -4,18 +4,21 @@
  * print_to_98 - prints to 98 from whatever random int
  * @x: integer
  */
-void print_to_98(int x)
+void print_to_98(int n)
 {
-	for (; x < 98; x++)
+	int x;
+
+	if (n > 98)
 	{
-		printf("%d, ", x);
+		for (x = n; x > 98; x--)
+			printf("%d, ", x);
 	}
-	for (; x > 98; x--)
+
+	if (n < 98)
 	{
-		printf("%d, ", x);
+		for (x = n; x < 98; x++)
+			printf("%d, ", x);
 	}
-	if (x == 98)
-	{
-		printf("%d\n", x);
-	}
+
+	printf("98\n");
 }
