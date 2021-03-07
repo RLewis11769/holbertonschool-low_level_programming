@@ -1,22 +1,29 @@
 #include <stdio.h>
+
 /**
  * main - Prints size of common data types
- * Return: Returns the sizes of data types in strings
+ * Return: 0 if successful
  */
 
 int main(void)
 {
-char c;
-int i;
-long l;
-long long ll;
-float f;
+	char c;
+	int i;
+	long int li;
+	long long int lli;
+	float f;
 
-printf("Size of a char: %lu byte(s)\n", sizeof(c));
-printf("Size of an int: %lu byte(s)\n", sizeof(i));
-printf("Size of a long int: %lu byte(s)\n", sizeof(l));
-printf("Size of a long long int: %lu byte(s)\n", sizeof(ll));
-printf("Size of a float: %lu byte(s)\n", sizeof(f));
-return (0);
+	c = sizeof(char);
+	i = sizeof(int);
+	li = sizeof(long);
+	lli = sizeof(long long);
+	f = sizeof(float);
+
+	printf("Size of a char: %d byte(s)\n", c);
+	printf("Size of an int: %d byte(s)\n", i);
+	printf("Size of a long int: %d byte(s)\n", li);
+	printf("Size of a long long int: %d byte(s)\n", lli);
+	printf("Size of a float: %d byte(s)\n", f);
+
+	return (0);
 }
-
