@@ -1,21 +1,4 @@
-#include "holberton.h"
 #include <stdlib.h>
-
-/**
- * length - finds length of string
- * @s: string to find length of
- * Return: length of string
- */
-
-int length(char *s)
-{
-	int length = 0;
-
-	while (s[length] != '\0')
-		length++;
-
-	return (length);
-}
 
 /**
  * _strdup - copies string
@@ -26,17 +9,20 @@ int length(char *s)
 char *_strdup(char *str)
 {
 	int x;
+	int length = 0;
 	char *p;
 
 	if (str == NULL)
 		return (NULL);
 
-	p = (char *)malloc(length(str) * sizeof(char) + 1);
+	while (str[length] != '\0')
+		length++;
 
+	p = malloc(length * sizeof(char) + 1);
 	if (p == 0)
 		return (NULL);
 
-	for (x = 0; x < length(str); x++)
+	for (x = 0; x < length; x++)
 		p[x] = str[x];
 	p[x] = '\0';
 
