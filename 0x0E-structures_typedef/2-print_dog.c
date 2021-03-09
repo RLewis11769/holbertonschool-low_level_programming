@@ -2,13 +2,6 @@
 #include <stdio.h>
 #include "dog.h"
 
-#ifdef NULL
-#undef NULL
-#endif
-
-#define NULL "(nil)"
-
-
 /**
  * print_dog - prints "struct dog"
  * @d: pointer to struct dog
@@ -16,8 +9,12 @@
 
 void print_dog(struct dog *d)
 {
-	if (d == 00)
+	if (d == NULL)
 		exit(1);
+	if (d->name == NULL)
+		d->name = "(nil)";
+	if (d->owner == NULL)
+		d->owner = "(nil)";
 	else
 	{
 		printf("Name: %s\n", d->name);
