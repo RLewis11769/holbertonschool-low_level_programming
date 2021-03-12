@@ -3,10 +3,16 @@
 
 #include <stdarg.h>
 
+/**
+ * struct printAll - struct for printing
+ * @specifier: format specifier character
+ * @printFunc: function pointer for print functions
+ */
+
 struct printAll
 {
 	char *specifier;
-	void(*printFunc)(va_list);
+	void (*printFunc)(va_list);
 };
 
 int sum_them_all(const unsigned int n, ...);
