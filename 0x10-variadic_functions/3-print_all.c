@@ -60,7 +60,7 @@ void print_all(const char * const format, ...)
 
 	va_list args;
 
-	struct printAll ChooseF[] = {
+	func_t ChooseF[] = {
 		{"c", printChar},
 		{"s", printString},
 		{"i", printInt},
