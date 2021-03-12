@@ -23,9 +23,8 @@ void printString(va_list s)
 
 	str = va_arg(s, char*);
 	if (str == NULL)
-		printf("%p", str);
-	else
-		printf("%s", str);
+		str = "(nil)";
+	printf("%s", str);
 }
 
 /**
