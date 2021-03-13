@@ -21,14 +21,14 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-/*
- *	if ((get_op_func(argv[2]) == op_div && atoi(argv[4]) == '0')
- *	    || (get_op_func(argv[2]) == op_mod && atoi(argv[4]) == '0'))
- *	{
- *		printf("Error\n");
- *		exit(100);
- *	}
-*/
+
+	if ((get_op_func(argv[2]) == op_div && atoi(argv[3]) == 0)
+	    || (get_op_func(argv[2]) == op_mod && atoi(argv[3]) == 0))
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
 	result = get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3]));
 	printf("%d\n", result);
 
