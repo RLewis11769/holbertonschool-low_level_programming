@@ -2,7 +2,6 @@
 
 /**
  * printBefore - prints before main function is executed
- *
  */
 
 void __attribute__ ((constructor)) printBefore()
