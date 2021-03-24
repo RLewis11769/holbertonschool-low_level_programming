@@ -29,13 +29,10 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	/* points temp at position before deletion */
 	for (x = 0; x < index - 1; x++)
-		temp = temp->next;
-
-	/* if trying to delete position that does not exist */
-	if (index > x)
 	{
-		free(temp);
-		return (-1);
+		temp = temp->next;
+		if (temp->next == NULL)
+			return (-1);
 	}
 
 	/* points delete at position to be deleted */
