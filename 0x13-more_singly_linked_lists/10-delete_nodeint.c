@@ -13,9 +13,9 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	unsigned int x;
 	listint_t *temp;
-	listint_t *NorNplus;
+	listint_t *delete;
 
-	if (*head == NULL)
+	if (head == NULL)
 		return (-1);
 
 	temp = *head;
@@ -27,18 +27,22 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		return (1);
 	}
 
+	/* points temp at position before deletion */
 	for (x = 0; x < index - 1; x++)
 		temp = temp->next;
 
-	if (index - 1 > x)
+	/* if trying to delete position that does not exist */
+	if (index > x)
 	{
 		free(temp);
 		return (-1);
 	}
 
-	NorNplus = temp->next;
-	temp->next = NorNplus->next;
-	free(NorNplus);
+	/* points delete at position to be deleted */
+	delete = temp->next;
+	/* points temp at position after deletion, skipping over delete */
+	temp->next = delete->next;
+	free(delete);
 
 	return (1);
 }
