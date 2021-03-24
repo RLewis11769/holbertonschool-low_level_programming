@@ -34,14 +34,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	h = *head;
 
-	/* if list doesn't exist, create new list */
-	if (h == NULL)
-	{
-		*head = temp;
-		temp->next = NULL;
-		return (temp);
-	}
-
 	/* 0-based index, 1-based index would be idx - 2 */
 	for (x = 0; x < idx - 1; x++)
 	{
