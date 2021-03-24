@@ -15,10 +15,15 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	listint_t *temp;
 	listint_t *delete;
 
+	/* check if passed head */
 	if (head == NULL)
 		return (-1);
 
 	temp = *head;
+
+	/* check if list exists */
+	if (temp == NULL)
+		return (-1);
 
 	if (index == 0)
 	{
