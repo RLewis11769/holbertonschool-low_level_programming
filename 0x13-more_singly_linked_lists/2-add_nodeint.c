@@ -17,8 +17,11 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	if (temp == NULL)
 		return (NULL);
 
+	/* adds data to newly-created location */
 	temp->n = n;
+	/* points newly-created struct back at head */
 	temp->next = *head;
+	/* points head at temp so list is now backward */
 	*head = temp;
 
 	return (*head);

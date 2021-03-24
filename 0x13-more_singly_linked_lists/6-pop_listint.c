@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * pop_listint - delete first node and return head node's data
+ * pop_listint - delete head node and return data it holds
  * @head: pointer to pointer to beginning of linked list
  * Return: data stored in head node that is deleted
  */
@@ -15,9 +15,13 @@ int pop_listint(listint_t **head)
 
 	if (*head != NULL)
 	{
+		/* points at head node to store head node's value */
 		storeN = (*head)->n;
+		/* points temp at head node */
 		temp = *head;
+		/* point head at new head, the second node */
 		*head = (*head)->next;
+		/* frees what temp is pointing at, the original head node */
 		free(temp);
 	}
 

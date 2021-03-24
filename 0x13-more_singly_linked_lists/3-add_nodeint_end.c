@@ -20,10 +20,13 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	newNode->n = n;
 	newNode->next = NULL;
 
+	/* cycles through list until second-to-last is pointing at temp head */
 	while (*head != NULL)
 		head = &(*head)->next;
 
+	/* points temp head at last in list */
 	*head = newNode;
 
 	return (newNode);
+	/* note that at the end, temp head is between second-to-last and last */
 }
