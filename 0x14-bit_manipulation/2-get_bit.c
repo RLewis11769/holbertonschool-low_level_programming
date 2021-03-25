@@ -10,12 +10,9 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	int shift;
+	unsigned int shift;
 
-	if (n == NULL)
-		return (-1);
-
-	shift = n << index;
+	shift = n >> index;
 
 	if (shift % 2 == 1)
 		return (1);
