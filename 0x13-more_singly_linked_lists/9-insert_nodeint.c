@@ -35,19 +35,19 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (*head);
 	}
 	h = *head;
-
-	/* cycles until h is pointing at position before new struct or end */
-	for (x = 0; temp->next != NULL; x++)
+	/* points h at position before to be inserted*/
+	while (h->next != NULL)
 	{
 		/* 0-based index, 1-based index would be idx - 2 */
 		if (x == (idx - 1))
 		{
-			/* points new struct at struct after it */
+			/* points new struct at position after it should be */
 			temp->next = h->next;
-			/* points struct before new at it */
+			/* points struct before to new struct */
 			h->next = temp;
 			return (temp);
 		}
+		x++;
 		h = h->next;
 	}
 	free(temp);
