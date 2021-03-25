@@ -36,8 +36,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	h = *head;
 
-	/* cycles until h is pointing at position before new struct */
-	for (x = 0; temp != NULL; x++)
+	/* cycles until h is pointing at position before new struct or end */
+	for (x = 0; temp->next != NULL; x++)
 	{
 		/* 0-based index, 1-based index would be idx - 2 */
 		if (x == (idx - 1))
