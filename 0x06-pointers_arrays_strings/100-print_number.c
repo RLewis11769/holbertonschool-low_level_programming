@@ -1,59 +1,45 @@
 #include "holberton.h"
 
 /**
+ * printIntHelper - Recursive function for printing integer
+ * @num: Integer to print
+ * Return: character printing counter inside recursive function
+ */
+
+void printIntHelper(unsigned int num)
+{
+	int output;
+
+	/* base condition to end recursion and start printing */
+	if (num == 0)
+		return;
+
+	else
+	{
+		/* Strips last digit of integer */
+		output = num % 10;
+		/* Sends back integer without last digit for recursion */
+		printIntHelper(num / 10);
+		/* Prints digits in order */
+		_putchar(output + '0');
+	}
+}
+
+/**
  * print_number - prints integers
  * @n: integer to be printed
  */
 
 void print_number(int n)
 {
-	int max = 2147483647;
-	int x;
-	int orig = n;
-	int rem = 0;
+	if (n == 0)
+		_putchar(0 + '0');
 
 	if (n < 0)
 	{
-		_putchar('-');
 		n = -n;
-		orig = n;
+		_putchar('-');
 	}
-
-	for (x = 0; x <= max; x++)
-	{
-		if (n < 10)
-		{
-			_putchar((n % 10) + '0');
-			break;
-		}
-		else if (n >= 10 && n < 100)
-		{
-			_putchar((n / 10) + '0');
-			n = n % 10;
-		}
-		else if (n >= 100)
-		{
-			if (n >= 100 && n < 1000)
-			{
-				n = n / 10;
-				continue;
-			}
-			else
-			{
-				rem = n % 100;
-				n = n / 10;
-				continue;
-			}
-		}
-		else
-		{
-			_putchar((n % 10) + '0');
-			break;
-		}
-	}
-	if (orig > 100 && orig < max)
-	{
-		_putchar(rem / 10 + '0');
-		_putchar(rem % 10 + '0');
-	}
+	/* Casts as unsigned to account for positive INT_MIN */
+	printIntHelper((unsigned int)n);
 }
