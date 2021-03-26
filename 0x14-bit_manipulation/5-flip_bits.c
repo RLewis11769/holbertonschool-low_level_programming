@@ -18,7 +18,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	int x;
 
 	/* traverses all potential 32 digits for differences */
-	for (x = 0; x < 32; x++)
+	for (x = 0; x <= 32; x++)
 	{
 		if (((m >> x) & 1) != ((n >> x) & 1))
 			sum++;
