@@ -17,8 +17,11 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	int sum = 0;
 	int x;
 
+	if (m > 4294967295 || n > 4294967295)
+		return (63);
+
 	/* traverses all 64 digits for differences */
-	for (x = 0; x <= 64; x++)
+	for (x = 0; x <= 32; x++)
 	{
 		if (((m >> x) & 1) != ((n >> x) & 1))
 			sum++;
