@@ -10,14 +10,12 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int shift;
-
 	if (index >= 32)
 		return (-1);
 
-	shift = n >> index;
+	n = n >> index;
 
-	if (shift % 2 == 1)
+	if (n & 1)
 		return (1);
 	else
 		return (0);
