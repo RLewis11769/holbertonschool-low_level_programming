@@ -11,7 +11,7 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int o_fd, r_fd, w_fd;
+	int o_fd, r_count, w_count;
 	char *buf;
 
 	if (filename == NULL)
@@ -21,27 +21,27 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (buf == NULL)
 		return (0);
 
-	/* opens filename as read-only at  first unused FD */
+	/* opens filename as read-only at first unused file descriptor */
 	o_fd = open(filename, O_RDONLY);
 	if (o_fd < 0)
 		return (0);
 
 	/* reads letters number of chars from o_fd and stores in buf */
-	r_fd = read(o_fd, buf, letters);
-	if (r_fd < 0)
+	r_count = read(o_fd, buf, letters);
+	if (r_count < 0)
 		return (0);
 
-	/* writes r_fd numbers of chars from buf to stdout */
-	w_fd = write(STDOUT_FILENO, buf, r_fd);
-	if (w_fd < 0)
+	/* writes r_count numbers of chars from buf to stdout */
+	w_count = write(STDOUT_FILENO, buf, r_count);
+	if (w_count < 0)
 		return (0);
 
-	/* verify everything written that was read */
-	if (w_fd != r_fd)
+	/* verify everything read was written */
+	if (w_count != r_count)
 		return (0);
 
 	close(o_fd);
 	free(buf);
 
-	return (w_fd);
+	return (w_count);
 }
