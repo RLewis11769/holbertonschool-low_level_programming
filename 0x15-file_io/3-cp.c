@@ -5,18 +5,18 @@
 
 /**
  * mallocBuffer - creates buffer to read from src and write to dest
- * @src_file: name of src file/filefrom/argv[1] where reading from
+ * @dest_file: name of src file/filefrom/argv[1] where reading from
  * Return: pointer to buffer
  */
 
-char *mallocBuffer(char *src_file)
+char *mallocBuffer(char *dest_file)
 {
 	char *buf;
 
 	buf = malloc(sizeof(char) * 1024);
 	if (buf == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", src_file);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_file);
 		exit(99);
 	}
 
@@ -106,13 +106,13 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	buf = mallocBuffer(argv[1]);
+	buf = mallocBuffer(argv[2]);
 
-	/* opens src file and reads to buf */
+	/* opens src file and copies content to buf */
 	src_fd = open(argv[1], O_RDONLY);
 	r_count = read(src_fd, buf, 1024);
 
-	/* error check if unable to read to buf */
+	/* error check if unable to copy content to buf */
 	check98(src_fd, r_count, argv[1], buf);
 
 	/* opens dest file and writes from buf */
