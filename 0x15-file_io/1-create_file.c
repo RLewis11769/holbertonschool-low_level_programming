@@ -23,7 +23,7 @@ int create_file(const char *filename, char *text_content)
 
 	/* opens filename as read-write */
 	/* if does not exist, create and truncate */
-	o_fd = open(filename, O_RDWR | O_CREAT | O_TRUNC);
+	o_fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
 	if (o_fd < 0)
 		return (-1);
 
