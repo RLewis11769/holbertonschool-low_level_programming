@@ -3,25 +3,34 @@
 ## Mandatory
 
 ### 0-Makefile
-- Creates a makefile
+- Builds simple executable
 
 ### 1-Makefile
-- Creates a makefile with variables
+- Builds simple exectuable using variables
 
 ### 2-Makefile
-- Creates a useful makefile
+- Builds executable with name by linking .o files
 
 ### 3-Makefile
-- Creates a makefile with multiple rules and variables
+- Builds executable and cleans after
 
 ### 4-Makefile
-- Creates a makefile with multiple rules and variables
+- Builds executable and cleans after with flags
 
 ### 5-island_perimeter.py
-- Technical interview preparation
+- Technical interview preparation (theoretically)
 - Returns perimeter of island with grid borders
     - Prototype: def island_perimeter(grid):
     - Used with: 5main.py
+
+## Advanced
+
+### 100-Makefile
+- Builds executable and cleans after
+    - Works if file in folder with name of rule
+    - Should not work without header
+    - Flags used implicitly
+    - Limitations on variables and rules
 
 ## Learning Objectives
 - What are make, Makefiles
