@@ -28,7 +28,7 @@ def island_perimeter(grid):
                 """ Note: surrounded by water so should only have 1s if > 1 """
                 if down > 0 and grid[down - 1][across] == 1:
                     connect += 1
-                if across > 0 and grid[down - 1][across] == 1:
+                if across > 0 and grid[down][across - 1] == 1:
                     connect += 1
     """ Each cell has 4 borders so multiply to get total possible """
     """ But lose 2 if two 1-cells next to each other, one from each cell """
