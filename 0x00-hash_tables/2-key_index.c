@@ -1,12 +1,15 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_create - Creates hash table
- * @size: size of array to allocate
- * Return: Pointer to new hash table or NULL on error
+ * key_index - Finds index of specified key
+ * @key: key string
+ * @size: size of table
+ * Return: Index where key/value will be stored
  */
 
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
-    return (hash_djb2(key) % size);
+	/* This sends the key to the hashing function */
+	/* Modulo to return position in array */
+	return (hash_djb2(key) % size);
 }
