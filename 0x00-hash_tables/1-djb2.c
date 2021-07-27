@@ -8,6 +8,7 @@
  */
 unsigned long int hash_djb2(const unsigned char *str)
 {
+	/* Note: https://github.com/papamuziko/7bb52dfbb859fdffc4bd0f95b76f71e8 */
 	unsigned long int hash;
 	int c;
 
