@@ -11,6 +11,9 @@ void hash_table_print(const hash_table_t *ht)
 	int flag = 0;
 	hash_node_t *node;
 
+	if (ht == NULL)
+		return;
+
 	putchar('{');
 	/* Loops through all nodes in hash table */
 	for (x = 0; x < ht->size; x++)
