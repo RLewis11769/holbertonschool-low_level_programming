@@ -2,34 +2,34 @@
 #include <stdio.h>
 
 /**
- * main - calls prime_factor function
+ * main - calls prime_factor for 612852475143
  * Return: 0 if successful
  */
 
 int main(void)
 {
-	prime_factor(612852475143);
+	unsigned long int num = 612852475143;
+
+	prime_factor(num);
+
 	return (0);
 }
 
 /**
- * prime_factor - finds largest prime factor of 612852475143
+ * prime_factor - prints the prime factors of a number
+ * @num: the number to factor
  */
 
-void prime_factor(unsigned long n)
+void prime_factor(unsigned long int num)
 {
-	int x = 2;
-	int largest = 2;
+	unsigned long int x;
 
-	while (n != 1)
+	for (x = 1; x < num; x++)
 	{
-		if (n % x == 0)
-		{
-			n = n / x;
-			if ( x > largest)
-				largest = x;
-		}
+		/* If num is divisible by x, then x is a prime factor */
+		if ((num % x) == 0)
+			/* Redefines num each time until find largest */
+			num = num / x;
 	}
-	x++;
-	printf("%d", largest);
+	printf("%lu\n", num);
 }
