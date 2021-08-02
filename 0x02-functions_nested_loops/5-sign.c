@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * print_sign - checks for positive, negative, or 0
- * Return: 1 if n is positive, -1 if negative, and 0 if zero
- * @n: First operand
+ * print_sign - checks if number is positive, negative, or 0
+ * @n: number to check
+ * Return: 1 if positive, -1 if negative, and 0 if zero
  */
 
 int print_sign(int n)
@@ -20,5 +20,6 @@ int print_sign(int n)
 	}
 	else
 		_putchar('0');
-		return (0);
+
+	return (0);
 }

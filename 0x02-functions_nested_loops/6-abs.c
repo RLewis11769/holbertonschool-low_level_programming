@@ -2,14 +2,14 @@
 
 /**
  * _abs - computes absolute value of integer
- * Return: absolute value
- * @r: number to find absolute value of
+ * @n: number to find absolute value of
+ * Return: absolute value of n
  */
 
-int _abs(int r)
+int _abs(int n)
 {
-	if (r < 0)
-		r = -r;
+	if (n < 0)
+		n = -n;
 
-	return (r);
+	return (n);
 }

@@ -2,7 +2,7 @@
 
 /**
  * natural - Sums all multiples of 3 or 5 under 1024
- * @x: 1024 in this case but should work with any number
+ * @x: Number to sum multiples of
  */
 
 void natural(int x)
