@@ -1,9 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_most_numbers - print numbers 0-9 except 2 and 4
- *
- * Return: 0 if successful
+ * print_most_numbers - prints numbers 0-9 except 2 and 4 meaning 01356789
  */
 
 void print_most_numbers(void)

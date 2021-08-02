@@ -2,24 +2,27 @@
 
 /**
  * print_triangle - prints triangle of #
- * @size: integer in size of triangle
- *
- * Return: 0 if successful
+ * @size: size of triangle
  */
 
 void print_triangle(int size)
 {
-	int d, a, bl;
+	int d, a, x;
 
 	if (size > 0)
-		for (d = 1; d <= size; d++)
+	{
+		for (d = 0; d < size; d++)
 		{
-			for (bl = 1; bl <= size - d; bl++)
+			/* Print spaces */
+			for (a = size; a > d; a--)
 				_putchar(' ');
-			for (a = 1; a <= d; a++)
+			/* Print # */
+			for (x = 0; x < d; x++)
 				_putchar('#');
-			_putchar('\n');
+			/* Newline after */
+			if (d < size)
+				_putchar('\n');
 		}
-	else
-		_putchar('\n');
+	}
+	_putchar('\n');
 }

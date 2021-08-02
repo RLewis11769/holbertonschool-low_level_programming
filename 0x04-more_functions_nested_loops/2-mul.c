@@ -1,14 +1,13 @@
+#include "holberton.h"
+
 /**
- * mul - checks for uppercase letters
+ * mul - Multiplies two numbers
  * @a: first integer to multiply
  * @b: second integer to multiply
- *
- * Return: total
+ * Return: result of multiplication
  */
 
 int mul(int a, int b)
 {
-	int sum = a * b;
-
-	return (sum);
+	return (a * b);
 }

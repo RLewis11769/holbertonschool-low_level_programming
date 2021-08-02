@@ -2,8 +2,7 @@
 
 /**
  * print_diagonal - draws diagonal line in terminal
- * @n: number of times \ is printed
- * Return: 0 if successful
+ * @n: number of lines where \ is printed and number of times to print it
  */
 
 void print_diagonal(int n)
@@ -14,20 +13,14 @@ void print_diagonal(int n)
 	{
 		for (d = 0; d < n; d++)
 		{
-			for (a = 0; a < n; a++)
-			{
-				if (a == d)
-					_putchar('\\');
-				else if (a < d)
-					_putchar(' ');
-				else if (a > d + 1)
-					_putchar('\n');
-				else
-					break;
-			}
-			_putchar('\n');
+			/* Space before \ */
+			for (a = 0; a < d; a++)
+				_putchar(' ');
+			_putchar('\\');
+			/* Newline after \ */
+			if (d < n)
+				_putchar('\n');
 		}
+	_putchar('\n');
 	}
-	else
-		_putchar('\n');
 }
