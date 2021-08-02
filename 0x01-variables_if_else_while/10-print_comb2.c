@@ -2,7 +2,7 @@
 
 /**
  * main - Prints numbers from 00 to 99
- * Return: Return set of comma-separated integers
+ * Return: 0 if successful
  */
 
 int main(void)

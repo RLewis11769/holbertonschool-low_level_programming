@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Prints lowest possible combination between 0-999
+ * main - Prints lowest unique combination of digits between 0-999
  * Return: 0 if successful
  */
 
@@ -11,6 +11,7 @@ int main(void)
 
 	for (d = 0; d < 1000; d++)
 	{
+		/* First, second, and third digit */
 		f = (d / 100);
 		s = (d / 10 % 10);
 		t = (d % 10);
