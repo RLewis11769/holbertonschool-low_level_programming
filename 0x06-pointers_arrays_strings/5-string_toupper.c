@@ -2,8 +2,8 @@
 
 /**
  * *string_toupper - changes lowercase letters to uppercase
- * @str: pointer to characters to be chaged
- * Return: pointer to string
+ * @str: pointer to string with letters to change
+ * Return: pointer to changed string
  */
 
 char *string_toupper(char *str)
@@ -12,6 +12,7 @@ char *string_toupper(char *str)
 
 	while (str[n] != '\0')
 	{
+		/* Uppercase ascii characters are 32 less than lowercase */
 		if (str[n] >= 'a' && str[n] <= 'z')
 			str[n] = str[n] - 32;
 		n++;

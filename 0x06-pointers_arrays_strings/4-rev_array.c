@@ -8,14 +8,18 @@
 
 void reverse_array(int *a, int n)
 {
-	int x;
-	int start = 0;
+	int temp;
+	int start;
 	int end = n - 1;
 
-	for (; start < end; start++, end--)
+	for (start = 0; start < end / 2; start++)
 	{
-		x = a[start];
+		/* Simple swap of characters */
+		/* Only need to go through half of array because start/end are swapping */
+		temp = a[start];
 		a[start] = a[end];
-		a[end] = x;
+		a[end] = temp;
+		/* Decrement end pointer */
+		end--;
 	}
 }

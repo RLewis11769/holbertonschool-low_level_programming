@@ -2,25 +2,29 @@
 
 /**
  * *leet - encodes a string into leet
- * @str: character to be encoded
- * Return: encoded character
+ * @str: string with characters to be encoded
+ * Return: encoded string
  */
 
 char *leet(char *str)
 {
-	int x = 0;
+	int c = 0;
 	int n = 0;
+	/* Each char in letter[] is encoded to each int in num[] at index */
 	char letter[] = {'A', 'a', 'E', 'e', 'O', 'o', 'T', 't', 'L', 'l'};
 	int num[] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
 
-	while (str[x] != '\0')
+	while (str[c] != '\0')
 	{
-		for (n = 0; n <= 9; n++)
+		/* Go through all 10 chars in letter[] */
+		for (n = 0; n < 10; n++)
 		{
-			if ((str[x] == letter[n]) && (letter[n] != num[n]))
-				str[x] = num[n];
+			/* If char is in letter, replace with matching index in num[] */
+			if ((str[c] == letter[n]) && (letter[n] != num[n]))
+				str[c] = num[n];
 		}
-		x++;
+		c++;
 	}
+
 	return (str);
 }
