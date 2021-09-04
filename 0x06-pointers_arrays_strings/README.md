@@ -60,17 +60,18 @@
 
 ## Advanced
 
+
+### 100-print_number.c
+- Print any integer
+    - Prototype:
+        - void print_number(int n);
+    - Used with:
+        - 100main.c
+
 ### 100-rot13.c
 - Returns string with all letters converted to ROT13 substitution cypher with 13 places differences
     - Prototype:
         - char *rot13(char *);
-    - Used with:
-        - 100main.c
-
-### 101-print_number.c
-- Print any integer
-    - Prototype:
-        - void print_number(int n);
     - Used with:
         - 101main.c
 

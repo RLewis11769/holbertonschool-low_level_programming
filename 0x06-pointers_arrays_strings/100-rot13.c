@@ -8,24 +8,25 @@
 
 char *rot13(char *str)
 {
-	int i = 0;
-	int x = 0;
+	int r;
+	int c = 0;
 	char rot1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char rot2[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	while (str[i] != '\0')
+	while (str[c] != '\0')
 	{
-		x = 0;
-		while (rot1[x] != '\0')
+		r = 0;
+		while (rot1[r] != '\0')
 		{
-			if (str[i] == rot1[x])
+			/* If str[s] is in rot1, replace with matching index in rot2 */
+			if (str[c] == rot1[r])
 			{
-				str[i] = rot2[x];
+				str[c] = rot2[r];
 				break;
 			}
-			x++;
+			r++;
 		}
-		i++;
+		c++;
 	}
 	return (str);
 }
