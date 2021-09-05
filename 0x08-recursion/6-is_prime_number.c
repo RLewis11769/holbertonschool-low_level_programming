@@ -1,47 +1,39 @@
 #include "holberton.h"
 
 /**
- * prime - recursive to find prime
- * @p: test operator
- * @n: number to test
+ * check_prime - recursive function to find if number is prime
+ * @n: number to test if prime
+ * @p: possible number n is divisible by
  * Return: 1 if prime, 0 if not
  */
 
-int prime(int n, int p)
+int check_prime(int n, int p)
 {
-	if (n > 0)
-	{
-		if (p != 1)
-		{
-			if (n % p != 0)
-				return (prime(n, p - 1));
-			else
-				return (0);
-		}
-		else
-			return (1);
-	}
-	return (0);
+	/* Base condition when (p + 1) reaches n */
+	/* Have not found any ints that divide evenly */
+	if (n == p)
+		return (1);
+
+	/* If n is divisible by any number between 2 and p - 1, it is not prime */
+	if (n % p == 0)
+		return (0);
+
+	/* Start testing at 2 and increase until reach n (or evenly divisible) */
+	return (check_prime(n, p + 1));
 }
 
 /**
- * is_prime_number - tells if prime number or not
+ * is_prime_number - returns if prime number or not
  * @n: number to determine if prime
  * Return: 1 if prime, 0 if not
  */
 
 int is_prime_number(int n)
 {
-	int p;
-
-	if ((n != 0) && (n != 1))
-	{
-		p = prime(n, n / 2);
-		if (p == 1)
-			return (1);
-		else
-			return (0);
-	}
-	else
+	/* 1, 0, and negative numbers cannot be prime */
+	if (n <= 1)
 		return (0);
+
+	/* 2 is first possible prime number */
+	return (check(n, 2));
 }

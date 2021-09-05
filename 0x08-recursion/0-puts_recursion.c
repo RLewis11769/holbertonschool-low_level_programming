@@ -7,11 +7,17 @@
 
 void _puts_recursion(char *s)
 {
-	if (*s)
+	int c;
+
+	/* Base condition prints newline when reaches end of string */
+	if (s[c] == '\0')
 	{
-		_putchar(*s);
-		_puts_recursion(s + 1);
-	}
-	else
 		_putchar('\n');
+		return;
+	}
+
+	/* Prints character */
+	_putchar(s[c]);
+	/* Passes next character into function until reaches end of string */
+	_puts_recursion(s + 1);
 }

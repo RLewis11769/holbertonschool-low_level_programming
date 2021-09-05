@@ -8,8 +8,12 @@
 
 int _strlen_recursion(char *s)
 {
-	if (*s == '\0')
+	int c = 0;
+
+	/* Base condition passes back 0 when reaches end of string */
+	if (s[c] == '\0')
 		return (0);
-	else
-		return (1 + _strlen_recursion(s + 1));
+
+	/* Adds 1 on each iteration when reaches end of string */
+	return (1 + _strlen_recursion(s + 1));
 }

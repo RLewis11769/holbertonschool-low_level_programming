@@ -2,33 +2,42 @@
 
 /**
  * length - calculates length of string
- * @s: pointer to string to analyze
+ * @s: string to find length of
  * Return: length of string
  */
 
 int length(char *s)
 {
-	if (*s == '\0')
-		return (0);
-	return (1 + length(s + 1));
+	int len = 0;
+
+	while (s[len] != '\0')
+		len++;
+
+	return (len);
 }
 
 /**
- * pal - determines if string is palindrome
+ * check_pal - determines if string is palindrome
  * @s: string to check
- * @first: first integer
- * @last: last integer
+ * @first: first index
+ * @last: last index
  * Return: 1 if palindrome, 0 if not
  */
 
-int pal(char *s, int first, int last)
+int check_pal(char *s, int first, int last)
 {
+	/* Base condition when last index is reaches 0 */
+	/* If at beginning of string without error, all characters are equal */
 	if (last == 0)
 		return (1);
-	if (*(s + first) != *(s + last))
+
+	/* If first and last characters are not the same, string is not palindrome */
+	if (s[first] != s[last])
 		return (0);
-	else
-		return (pal(s, first + 1, last - 1));
+
+	/* Start testing at first and last characters */
+	/* Move both indexes inwards until last character is at index 0 */
+	return (check_pal(s, first + 1, last - 1));
 }
 
 /**
@@ -39,5 +48,6 @@ int pal(char *s, int first, int last)
 
 int is_palindrome(char *s)
 {
-	return (pal(s, 0, length(s) - 1));
+	/* Index of first and last characters are first characters to test if same */
+	return (check_pal(s, 0, length(s) - 1));
 }
