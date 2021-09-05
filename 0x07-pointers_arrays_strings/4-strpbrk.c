@@ -8,17 +8,25 @@
  * Return: pointer to matching byte or NULL
  */
 
+/* Examples:
+	"hello" and "hole" == "hello" (returns pointer to "h")
+	"hello" and "world" == "llo" ('l' in 'world' comes earliest in 'hello')
+	"hello" and "word" == "o" ('o' in 'world' comes earliest in 'hello')
+*/
+
 char *_strpbrk(char *s, char *accept)
 {
-	int x, y;
+	int c, a;
 
-	for (x = 0; s[x] != '\0'; x++)
+	for (c = 0; s[c] != '\0'; c++)
 	{
-		for (y = 0; accept[y] != '\0'; y++)
+		for (a = 0; accept[a] != '\0'; a++)
 		{
-			if (s[x] == accept[y])
-				return (s + x);
+			/* Returns pointer at first match of character in accept[a] */
+			if (s[c] == accept[a])
+				return (s + c);
 		}
 	}
+
 	return (0);
 }

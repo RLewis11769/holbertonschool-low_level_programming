@@ -1,5 +1,5 @@
-#include "holberton.h"
-
+#include "main.h"
+#include <stdio.h>
 /**
  * *_strchr - locates character in string
  * @s: pointer to string where c is
@@ -9,25 +9,14 @@
 
 char *_strchr(char *s, char c)
 {
-	int x;
-	int length = 0;
+	int i = 0;
 
-	while (s[length] != '\0')
-		length++;
-
-	for (x = 0; x <= length; x++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[x] == c)
-		{
-			s = &s[x];
-			return (s);
-		}
-		else if (s[x] == length)
-		{
-			break;
-		}
-		else
-			continue;
+		/* If c is found, return pointer to it */
+		if (s[i] == c)
+			return (&s[i]);
 	}
-	return (0);
+
+	return (NULL);
 }
