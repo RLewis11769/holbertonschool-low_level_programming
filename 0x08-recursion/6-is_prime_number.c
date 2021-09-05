@@ -35,5 +35,5 @@ int is_prime_number(int n)
 		return (0);
 
 	/* 2 is first possible prime number */
-	return (check(n, 2));
+	return (check_prime(n, 2));
 }

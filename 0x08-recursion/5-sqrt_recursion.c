@@ -22,7 +22,7 @@ int check_sqr(int n, int check)
 		return (-1);
 
 	/* Start testing at 0 and increase until check^2 reaches n (or too big) */
-	return (sqr(n, check + 1));
+	return (check_sqr(n, check + 1));
 }
 
 /**
@@ -38,5 +38,5 @@ int _sqrt_recursion(int n)
 		return (-1);
 
 	/* 0 is first possible number that can have square root */
-	return (sqr(n, 0));
+	return (check_sqr(n, 0));
 }
