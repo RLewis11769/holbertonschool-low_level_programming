@@ -96,6 +96,11 @@
     - Used with:
         - 101main.c
 
+## Library Function Duplication
+
+- 0-isupper.c
+- 1-isdigit.c
+
 ## Learning Objectives
 - What are nested loops and how to use them
 - What is a function and how do you use them

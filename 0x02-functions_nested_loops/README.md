@@ -106,6 +106,12 @@
 - Prints first 50 Fibonacci numbers
     - Can use standard library
 
+## Library Function Duplication
+
+- 3-islower.c
+- 4-isalpha.c
+- 6-abs.c
+
 ## Learning Objectives
 - What are nested loops and how to use them
 - What is a function and how do you use them
