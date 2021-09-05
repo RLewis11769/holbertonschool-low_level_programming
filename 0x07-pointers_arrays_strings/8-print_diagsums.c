@@ -32,7 +32,7 @@ void print_diagsums(int *a, int size)
 		sumLR += a[x];
 	/* Add RL diagonal based on (size - 1) equation */
 	/* While x is less than size of matrix until reach beginning */
-	for (x = size - 1; x < ((size * size) - (size + 1)); x += (size - 1))
+	for (x = size - 1; x < ((size * size) - size + 1); x += (size - 1))
 		sumRL += a[x];
 	printf("%d, %d\n", sumLR, sumRL);
 }
