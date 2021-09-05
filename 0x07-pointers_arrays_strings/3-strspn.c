@@ -7,11 +7,12 @@
  * Return: number of bytes in common until first mismatch
  */
 
-/* Examples:
-	"hello" and "hole" == 5 (all characters)
-	"hello o" and "hole" == 5 (' ' does not match)
-	"hello" and "ole" == 0 (does not match 'h')
-	"hello" and "hold" == 1 (matches 'h' but not 'e')
+/*
+ * Examples:
+ *	"hello" and "hole" == 5 (all characters)
+ *	"hello o" and "hole" == 5 (' ' does not match)
+ *	"hello" and "ole" == 0 (does not match 'h')
+ *	"hello" and "hold" == 1 (matches 'h' but not 'e')
 */
 
 unsigned int _strspn(char *s, char *accept)

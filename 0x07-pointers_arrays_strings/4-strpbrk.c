@@ -8,10 +8,11 @@
  * Return: pointer to matching byte or NULL
  */
 
-/* Examples:
-	"hello" and "hole" == "hello" (returns pointer to "h")
-	"hello" and "world" == "llo" ('l' in 'world' comes earliest in 'hello')
-	"hello" and "word" == "o" ('o' in 'world' comes earliest in 'hello')
+/*
+ * Examples:
+ *	"hello" and "hole" == "hello" (returns pointer to "h")
+ *	"hello" and "world" == "llo" ('l' in 'world' comes earliest in 'hello')
+ *	"hello" and "word" == "o" ('o' in 'world' comes earliest in 'hello')
 */
 
 char *_strpbrk(char *s, char *accept)

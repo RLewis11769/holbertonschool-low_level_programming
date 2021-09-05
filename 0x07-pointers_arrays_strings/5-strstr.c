@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 /**
  * *_strstr - locates substring
@@ -7,10 +7,11 @@
  * Return: pointer to beginning of located substring or NULL
  */
 
-/* Examples:
-	"hello" and "lo" == "lo"
-	"hello" and "h" == "hello"
-	"hello" and "world" == seg fault (including regular strstr)
+/*
+ * Examples:
+ *	"hello" and "lo" == "lo"
+ *	"hello" and "h" == "hello"
+ *	"hello" and "world" == seg fault (including regular strstr)
 */
 
 char *_strstr(char *haystack, char *needle)
