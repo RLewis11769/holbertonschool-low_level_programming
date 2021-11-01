@@ -32,9 +32,9 @@ char *argstostr(int ac, char **av)
 	if ((ac == 0) || (av == NULL))
 		return (NULL);
 
-	/* Find length of each string */
+	/* Find length of each string with space for newline */
 	for (x = 0; x < ac; x++)
-		len += length(av[x]);
+		len += + length(av[x]) + 1;
 
 	/* Malloc for each string and null byte */
 	arr = malloc(sizeof(char) * len + 1);
