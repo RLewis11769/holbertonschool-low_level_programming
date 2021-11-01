@@ -1,1 +1,67 @@
-#Now we are learning about dynamic memory allocation with malloc() and free()
+# Now we are learning about dynamic memory allocation with malloc() and free()
+
+## Valgrind
+
+
+
+## Mandatory
+
+### 0-create_array.c
+- Allocates array of characters and initializes with given character
+	- Prototype:
+		- char *create_array(unsigned int size, char c);
+	- Used with:
+		- 0main.c
+
+### 1-strdup.c
+- Allocates new array which contains copy of given string
+	- Prototype:
+		- char *_strdup(char *str);
+	- Used with:
+		- 1main.c
+
+### 2-str_concat.c
+- Allocates array which contains copy of s1 string then s2 string (concatenated)
+	- Prototype:
+		- char *str_concat(char *s1, char *s2);
+	- Used with:
+		- 2main.c
+
+### 3-alloc_grid.c
+- Allocates 2d grid of integers based on width and height
+	- Prototype:
+		- int **alloc_grid(int width, int height);
+	- Used with:
+		- 3main.c
+	- Note:
+		- Contains Valgrind/Memcheck leaks as is (fixed in 4)
+
+### 4-free_grid.c
+- Frees 2d grid of integers created by 3-alloc_grid.c
+	- Prototype:
+		- void free_grid(int **grid, int height);
+	- Used with:
+		- 4main.c
+
+## Advanced
+
+### 100-argstostr.c
+- Allocates for all arguments typed in argc/argv
+	- Prototype:
+		- char *argstostr(int ac, char **av);
+	- Used with:
+		- 100main.c
+	- Example:
+	```
+	$ ./a.out hello world
+	./a.out
+	hello
+	world
+	```
+
+## Learning Objectives
+
+- What is the difference between automatic and dynamic allocation
+- What are malloc and free and how to use them
+- Why and when use malloc
+- How to use valgrind to check for memory leak
