@@ -20,18 +20,26 @@ int **alloc_grid(int width, int height)
 	if (arr == NULL)
 		return (NULL);
 
+	/* Allocate memory for each row */
 	for (x = 0; x < height; x++)
 	{
+		/* Allocate memory for each column */
 		arr[x] = malloc(sizeof(int) * width);
+		/* If malloc fails at any point, free all memory */
 		if (arr[x] == NULL)
 		{
+			/* Free memory for each row */
 			for (; x >= 0; x--)
 				free(arr[x]);
+			/* Free memory for array in general */
 			free(arr);
 			return (NULL);
 		}
+
+		/* Initialize each element of grid to 0 */
 		for (y = 0; y < width; y++)
 			arr[x][y] = 0;
 	}
+
 	return (arr);
 }

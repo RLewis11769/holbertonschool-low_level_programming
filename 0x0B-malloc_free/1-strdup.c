@@ -10,21 +10,25 @@ char *_strdup(char *str)
 {
 	int x;
 	int length = 0;
-	char *p;
+	char *arr;
 
 	if (str == NULL)
 		return (NULL);
 
+	/* Finds length of string */
 	while (str[length] != '\0')
 		length++;
 
-	p = malloc(length * sizeof(char) + 1);
-	if (p == 0)
+	/* Allocates memory for string and null byte */
+	arr = malloc(length * sizeof(char) + 1);
+	if (arr == 0)
 		return (NULL);
 
+	/* Copies string */
 	for (x = 0; x < length; x++)
-		p[x] = str[x];
-	p[x] = '\0';
+		arr[x] = str[x];
+	/* Adds null byte (x is one more than length of string) */
+	arr[x] = '\0';
 
-	return (p);
+	return (arr);
 }

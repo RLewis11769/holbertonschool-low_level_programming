@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdlib.h>
 
 /**
@@ -28,31 +28,45 @@ char *argstostr(int ac, char **av)
 {
 	int x, y;
 	int s = 0;
-	int l = 0;
-	char *p;
+	int len = 0;
+	char *arr = NULL;
 
 	if (ac == 0)
 		return (NULL);
 	if (av == NULL)
 		return (NULL);
 
+	/* Find length of each string */
 	for (x = 0; x < ac; x++)
-		l += length(av[x]);
+		len += length(av[x]);
 
-	p = (char *)malloc(sizeof(char) * l + 1);
-	if (p == NULL)
+	/* Malloc space for each string and null byte */
+	arr = (char *)malloc(sizeof(char) * len + 1);
+	if (arr == NULL)
 		return (NULL);
 
+	/* Copy each string into new string */
 	for (x = 0; x < ac; x++)
 	{
+		/* Copy each character into new string */
 		for (y = 0; av[x][y] != '\0'; y++)
 		{
-			p[s] = av[x][y];
+			arr[s] = av[x][y];
 			s++;
 		}
-		p[s++] = '\n';
+		/* If not last string, add newline and advance */
+		if (x < ac - 1)
+		{
+			arr[s] = '\n';
+			s++;
+		}
+		/* If last string, add newline and null byte */
+		else
+		{
+			arr[s] = '\n';
+			arr[s + 1] = '\0';
+		}
 	}
-	p[s] = '\0';
 
-	return (p);
+	return (arr);
 }

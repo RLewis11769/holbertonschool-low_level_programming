@@ -10,14 +10,19 @@
 
 char *create_array(unsigned int size, char c)
 {
-	unsigned int i;
-	char *p = (char *)malloc(size * sizeof(char));
+	unsigned int x;
+	char *arr = (char *)malloc(size * sizeof(char));
 
+	/* If given size of array is 0, return NULL */
 	if (size == 0)
 		return (NULL);
-	if (p == 0)
+	/* If malloc fails, return NULL */
+	if (arr == 0)
 		return (NULL);
-	for (i = 0; i < size; i++)
-		p[i] = c;
-	return (p);
+
+	/* Initialize array with character */
+	for (x = 0; x < size; x++)
+		arr[x] = c;
+
+	return (arr);
 }

@@ -28,30 +28,35 @@ char *str_concat(char *s1, char *s2)
 {
 	int x, y;
 	int c = 0;
-	char *p;
+	char *arr;
 
+	/* If either string is null, treated as empty string */
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	p = (char *)malloc(length(s1) + length(s2) * sizeof(char) + 1);
-
-	if (p == NULL)
+	/* Malloc for length of s2, s2, and null byte */
+	arr = (char *)malloc((length(s1) + length(s2)) * sizeof(char) + 1);
+	if (arr == NULL)
 		return (NULL);
 
+	/* Copy each digit x of s1 to arr */
 	for (x = 0; s1[x] != '\0'; x++)
 	{
-		p[c] = s1[x];
+		arr[c] = s1[x];
 		c++;
 	}
 
+	/* Copy each digit y of s2 to arr */
 	for (y = 0; s2[y] != '\0'; y++)
 	{
-		p[c] = s2[y];
+		arr[c] = s2[y];
 		c++;
 	}
-	p[c] = '\0';
 
-	return (p);
+	/* c has kept track of length of s1 and s2, so set to null byte */
+	arr[c] = '\0';
+
+	return (arr);
 }
