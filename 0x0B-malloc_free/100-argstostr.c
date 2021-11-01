@@ -34,7 +34,7 @@ char *argstostr(int ac, char **av)
 
 	/* Find length of each string with space for newline */
 	for (x = 0; x < ac; x++)
-		len += + length(av[x]) + 1;
+		len = len + length(av[x]) + 1;
 
 	/* Malloc for each string and null byte */
 	arr = malloc(sizeof(char) * len + 1);
