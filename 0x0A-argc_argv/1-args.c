@@ -9,8 +9,10 @@
 
 int main(int argc, char *argv[])
 {
+	/* Not using argv at all so void out unused parameter */
 	(void)argv;
 
+	/* argc counts total number of arguments - exclude program name at argv[0] */
 	printf("%d\n", argc - 1);
 
 	return (0);

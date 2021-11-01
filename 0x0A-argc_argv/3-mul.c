@@ -9,9 +9,10 @@
 
 int main(int argc, char *argv[])
 {
-	long int x, y;
-	long int result;
+	int x, y;
+	int result;
 
+	/* Require exactly 2 arguments */
 	if (argc != 3)
 	{
 		printf("Error\n");
@@ -19,10 +20,12 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
+		/* Stored as strings so convert to numbers */
 		x = atoi(argv[1]);
 		y = atoi(argv[2]);
 		result = x * y;
 	}
-	printf("%ld\n", result);
+	printf("%d\n", result);
+
 	return (0);
 }
