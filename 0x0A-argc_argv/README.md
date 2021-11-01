@@ -2,7 +2,7 @@
 
 ## Prototype
 int main(int argc, char *argv[])
-OR
+**OR**
 int main(int argc, char **argv)
 
 ## Mandatory
@@ -10,14 +10,14 @@ int main(int argc, char **argv)
 ### 0-whatsmyname.c
 - Prints program name
 	- Example:
-		```
-		$ gcc 0-whatsmyname.c
-		$ ./a.out
-		./a.out
-		$ mv a.out mynewname
-		$ ./mynewname
-		./mynewname
-		```
+	```
+	$ gcc 0-whatsmyname.c
+	$ ./a.out
+	./a.out
+	$ mv a.out mynewname
+	$ ./mynewname
+	./mynewname
+	```
 
 ### 1-args.c
 - Prints number of arguments passed in
