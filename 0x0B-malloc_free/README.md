@@ -1,4 +1,5 @@
-# Now we are learning about dynamic memory allocation with malloc() and free()
+# Dynamic Memory Allocation
+# malloc() and free()
 
 ## Valgrind
 
