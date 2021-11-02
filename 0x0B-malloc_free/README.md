@@ -2,7 +2,38 @@
 
 ## Valgrind
 
+### Install
 
+```
+sudo apt-get install valgrind
+```
+
+### Basic command:
+
+```
+valgrind ./a.out
+```
+
+To see where uninitialized values come from:
+
+```
+valgrind --track-origins=yes ./a.out
+```
+
+GCC's -g flag retains source-level debugging/symbol information in the executable itself aka keeps track of line numbers. To see line numbers where leak started:
+
+```
+gcc -g filename.c
+valgrind --leak-check=full ./a.out
+```
+
+### Looking for:
+
+```
+total heap usage: X allocs, X frees
+All heap blocks were freed -- no leaks are possible
+ERROR SUMMARY: 0 errors from 0 contexts
+```
 
 ## Mandatory
 
