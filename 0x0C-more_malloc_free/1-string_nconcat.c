@@ -28,31 +28,35 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int x, y;
 	int new = 0;
-	char *p;
+	char *arr;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
+	/* If n is greater or equal to length of s2, use all of s2 */
 	if (n >= length(s2))
 		n = length(s2);
 
-	p = malloc(sizeof(char) * length(s1) + n + 1);
-
-	if (p == NULL)
+	arr = malloc(sizeof(char) * length(s1) + n + 1);
+	if (arr == NULL)
 		return (NULL);
 
+	/* Copy all of s1 into arr */
 	for (x = 0; s1[x] != '\0'; x++)
 	{
-		p[new] = s1[x];
+		arr[new] = s1[x];
 		new++;
 	}
+	/* Copy n characters of s2 into arr */
 	for (y = 0; y < n; y++)
 	{
-		p[new] = s2[y];
+		arr[new] = s2[y];
 		new++;
 	}
-	p[new] = '\0';
-	return (p);
+	/* Terminate in null byte */
+	arr[new] = '\0';
+
+	return (arr);
 }
